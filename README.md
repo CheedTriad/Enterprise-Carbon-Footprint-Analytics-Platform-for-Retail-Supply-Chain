@@ -90,5 +90,5 @@ Kaack, L.H., Apt, J., Morgan, M.G. and Whitacre, J.F. (2022). The Carbon Catalog
 
 ## Author
 
-Chidiere Oluoma — BSc Computer Science, De Montfort University  
+Chidiere Oluoma - BSc Computer Science, De Montfort University  
 Supervised by Dr. Lipika Deka
