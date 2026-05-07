@@ -12,15 +12,15 @@ from sklearn.impute import SimpleImputer
 import plotly.graph_objects as go
 import plotly.express as px
 import dash
-from dash import dcc, html, dash_table, Input, Output, State, callback, ctx, no_update
+from dash import dcc, html, dash_table, Input, Output, State, callback, ctx, no_update, ALL
 import dash_bootstrap_components as dbc
 import uuid
 import warnings
 warnings.filterwarnings("ignore")
 
 # ── Load data ──────────────────────────────────────────────────────────────────
-products = pd.read_csv("fb_products_clean.csv")
-stages   = pd.read_csv("fb_stages_clean.csv")
+products = pd.read_csv("data/fb_products_clean.csv")
+stages   = pd.read_csv("data/fb_stages_clean.csv")
 
 # ── GreenMart anchor companies ────────────────────────────────────────────────
 ANCHOR_COMPANIES = [
@@ -418,25 +418,7 @@ SIDEBAR = dbc.Col([
             clearable=False,
             style={"marginBottom": "8px", "fontSize": "12px"},
         ),
-        html.Div(id="nc-active-banner", style={"display": "none", "marginBottom": "16px"}, children=[
-            html.Div([
-                html.Span(id="nc-active-label", style={
-                    "color": "#A8DEAD", "fontSize": "0.72rem", "fontWeight": "600",
-                    "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap",
-                }),
-                html.Button("✕", id="nc-clear-btn", n_clicks=0,
-                            title="Remove from benchmark", style={
-                    "background": "none", "border": "none", "color": "#8FA8BF",
-                    "cursor": "pointer", "padding": "0 0 0 6px",
-                    "fontSize": "0.78rem", "flexShrink": "0",
-                }),
-            ], style={
-                "display": "flex", "alignItems": "center",
-                "justifyContent": "space-between",
-                "backgroundColor": "#1A3344", "borderRadius": "4px",
-                "padding": "5px 8px", "borderLeft": f"3px solid {CUSTOM}",
-            }),
-        ]),
+        html.Div(id="nc-active-banner", style={"display": "none", "marginBottom": "16px"}),
 
         html.Hr(style={"borderColor": "#3D5166", "marginBottom": "14px"}),
         html.P("Navigation", style={"color": "#8FA8BF", "fontSize": "0.68rem", "textTransform": "uppercase", "letterSpacing": "0.07em", "marginBottom": "8px"}),
@@ -492,6 +474,7 @@ app.title = "GreenMart | Carbon Analytics"
 app.layout = dbc.Container([
     dcc.Location(id="url"),
     dcc.Store(id="custom-company-store", storage_type="session", data=None),
+    dcc.Store(id="editing-company-store", data=None),
     make_glossary_offcanvas(),
     make_new_company_modal(),
     dbc.Row([
@@ -719,6 +702,7 @@ def page_benchmarking(custom_data=None):
     company_stats["mean_intensity"] = company_stats["mean_intensity"].round(2)
     company_stats["total_pcf"]      = company_stats["total_pcf"].round(1)
     company_stats["mean_upstream"]  = (company_stats["mean_upstream"] * 100).round(1)
+    company_stats["mean_upstream"]  = company_stats["mean_upstream"].fillna("N/A")
 
     fig_bench = px.bar(
         company_stats, x="mean_intensity", y="company", orientation="h",
@@ -830,7 +814,7 @@ def page_benchmarking(custom_data=None):
                     {"name": "Products",               "id": "n_products"},
                     {"name": "Total PCF (kg CO2e)",    "id": "total_pcf"},
                     {"name": "Mean Intensity (kg/kg)", "id": "mean_intensity"},
-                    {"name": "Avg Upstream %",         "id": "mean_upstream"},
+                    {"name": "Avg Upstream %",         "id": "mean_upstream", "type": "text"},
                 ],
                 sort_action="native",
                 **ts_bench,
@@ -942,11 +926,14 @@ def render_page(pathname, company, custom_data):
     Output("new-company-modal", "is_open"),
     Input("company-filter", "value"),
     Input("nc-cancel", "n_clicks"),
+    Input("editing-company-store", "data"),
     prevent_initial_call=True,
 )
-def toggle_nc_modal(company_val, _cancel):
+def toggle_nc_modal(company_val, _cancel, editing_company):
     if ctx.triggered_id == "company-filter":
         return company_val == "__new__"
+    if ctx.triggered_id == "editing-company-store" and editing_company:
+        return True
     return False
 
 
@@ -980,8 +967,8 @@ def update_stage_sum(up, ops, dn, tr, eol):
     Output("nc-error", "children"),
     Output("company-filter", "value"),
     Output("url", "pathname"),
+    Output("editing-company-store", "data", allow_duplicate=True),
     Input("nc-submit", "n_clicks"),
-    Input("nc-clear-btn", "n_clicks"),
     State("nc-name", "value"),
     State("nc-product", "value"),
     State("nc-pcf", "value"),
@@ -993,26 +980,23 @@ def update_stage_sum(up, ops, dn, tr, eol):
     State("nc-eol", "value"),
     State("custom-company-store", "data"),
     State("url", "pathname"),
+    State("editing-company-store", "data"),
     prevent_initial_call=True,
 )
-def handle_store(submit_n, clear_n,
+def handle_store(submit_n,
                  name, product, pcf, weight, up, ops, dn, tr, eol,
-                 existing_data, current_path):
-    if ctx.triggered_id == "nc-clear-btn":
-        return None, "", "All Companies", "/benchmarking"
-
-    # Validate required fields
+                 existing_data, current_path, editing_company):
     if not (name and product and pcf is not None and weight is not None):
-        return no_update, "Please fill in all required fields.", no_update, no_update
+        return no_update, "Please fill in all required fields.", no_update, no_update, no_update
 
     if float(weight) <= 0:
-        return no_update, "Product weight must be greater than zero.", no_update, no_update
+        return no_update, "Product weight must be greater than zero.", no_update, no_update, no_update
 
     total_pct = sum(v or 0 for v in [up, ops, dn, tr, eol])
     if abs(total_pct - 100) > 1:
         return (no_update,
                 f"Stage percentages sum to {total_pct:.1f} %. They must sum to 100 %.",
-                no_update, no_update)
+                no_update, no_update, no_update)
 
     pcf_f, wt_f = float(pcf), float(weight)
     up_f, ops_f, dn_f, tr_f, eol_f = [float(v or 0) for v in [up, ops, dn, tr, eol]]
@@ -1031,22 +1015,108 @@ def handle_store(submit_n, clear_n,
         "mean_upstream":  up_f,
         "total_pcf":      round(pcf_f, 2),
     }
-    data = [r for r in (existing_data or []) if r["company"] != record["company"]]
+    # Remove old entry by new name AND by original name if editing with a renamed company
+    data = [r for r in (existing_data or [])
+            if r["company"] != record["company"] and r["company"] != (editing_company or "")]
     data.append(record)
-    return data, "", "All Companies", "/benchmarking"
+    return data, "", "All Companies", "/benchmarking", None
 
 
 # ── Sidebar active-company banner ─────────────────────────────────────────────
 @callback(
     Output("nc-active-banner", "style"),
-    Output("nc-active-label", "children"),
+    Output("nc-active-banner", "children"),
     Input("custom-company-store", "data"),
 )
 def show_nc_banner(data):
-    if data:
-        label = " · ".join(r["company"] for r in data)
-        return {"display": "block", "marginBottom": "16px"}, f"📊 {label}"
-    return {"display": "none", "marginBottom": "0"}, ""
+    if not data:
+        return {"display": "none"}, []
+    btn_style = {
+        "background": "none", "border": "none", "color": "#8FA8BF",
+        "cursor": "pointer", "padding": "0 3px", "fontSize": "0.75rem", "flexShrink": "0",
+    }
+    rows = []
+    for r in data:
+        rows.append(html.Div([
+            html.Span(f"📊 {r['company']}", style={
+                "color": "#A8DEAD", "fontSize": "0.72rem", "fontWeight": "600",
+                "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap",
+                "flex": "1",
+            }),
+            html.Button("✏", id={"type": "nc-edit-btn", "index": r["company"]},
+                        n_clicks=0, title="Edit", style=btn_style),
+            html.Button("✕", id={"type": "nc-delete-btn", "index": r["company"]},
+                        n_clicks=0, title="Remove", style=btn_style),
+        ], style={
+            "display": "flex", "alignItems": "center",
+            "backgroundColor": "#1A3344", "borderRadius": "4px",
+            "padding": "5px 8px", "borderLeft": f"3px solid {CUSTOM}",
+            "marginBottom": "4px",
+        }))
+    return {"display": "block", "marginBottom": "16px"}, rows
+
+
+@callback(
+    Output("custom-company-store", "data", allow_duplicate=True),
+    Input({"type": "nc-delete-btn", "index": ALL}, "n_clicks"),
+    State("custom-company-store", "data"),
+    prevent_initial_call=True,
+)
+def delete_company(n_clicks_list, data):
+    if not any(n or 0 for n in n_clicks_list) or not data:
+        return no_update
+    triggered = ctx.triggered_id
+    if not triggered:
+        return no_update
+    return [r for r in data if r["company"] != triggered["index"]]
+
+
+@callback(
+    Output("editing-company-store", "data"),
+    Input({"type": "nc-edit-btn", "index": ALL}, "n_clicks"),
+    prevent_initial_call=True,
+)
+def set_editing_company(n_clicks_list):
+    if not any(n or 0 for n in n_clicks_list):
+        return no_update
+    triggered = ctx.triggered_id
+    if not triggered:
+        return no_update
+    return triggered["index"]
+
+
+@callback(
+    Output("nc-name",       "value"),
+    Output("nc-product",    "value"),
+    Output("nc-pcf",        "value"),
+    Output("nc-weight",     "value"),
+    Output("nc-upstream",   "value"),
+    Output("nc-ops",        "value"),
+    Output("nc-downstream", "value"),
+    Output("nc-transport",  "value"),
+    Output("nc-eol",        "value"),
+    Input("editing-company-store", "data"),
+    State("custom-company-store", "data"),
+    prevent_initial_call=True,
+)
+def populate_edit_form(editing_company, all_data):
+    if not editing_company or not all_data:
+        return (None,) * 9
+    record = next((r for r in all_data if r["company"] == editing_company), None)
+    if not record:
+        return (None,) * 9
+    weight = round(record["pcf_kg_co2e"] / record["carbon_intensity"], 3) if record.get("carbon_intensity") else None
+    return (
+        record["company"],
+        record["product_name"],
+        record["pcf_kg_co2e"],
+        weight,
+        round(record["upstream_frac"] * 100, 1),
+        round(record["ops_frac"] * 100, 1),
+        round(record["downstream_frac"] * 100, 1),
+        round(record["transport_frac"] * 100, 1),
+        round(record["endoflife_frac"] * 100, 1),
+    )
 
 
 if __name__ == "__main__":
