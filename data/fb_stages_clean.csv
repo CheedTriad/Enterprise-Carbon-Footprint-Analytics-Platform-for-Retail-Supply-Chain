@@ -1,0 +1,352 @@
+pcf_id,stage_desc,scope,value_chain,stage_emissions_kg_co2e,is_transport,is_endoflife
+10056-1-2014,Other: Raw Material,Scope 3,Upstream,1.15,No,No
+10056-1-2014,Manufacturing,Scope 1 & 2,Operations,0.6,No,No
+10056-1-2014,Consumer use,Scope 3,Downstream,0.15,No,No
+10056-1-2014,Transportation,Scope 3,Downstream,0.09,Yes,No
+10056-1-2014,Storage,Scope 3,Downstream,0.01,No,No
+10056-1-2015,Material acquisition,Scope 3,Upstream,1.15,No,No
+10056-1-2015,Manufacturing,Scope 1 & 2,Operations,0.6,No,No
+10056-1-2015,Consumer use,Scope 3,Downstream,0.15,No,No
+10056-1-2015,Transportation,Other: Scope 1 & 3,Downstream,0.09,Yes,No
+10056-1-2015,Storage,"Scope 1, 2, & 3",Downstream,0.01,No,No
+1085-1-2013,Sugar beet supply - field preparation to factory gate,N/a (field not yet included in 2013 reporting),Upstream,300.0,No,No
+1085-1-2013,Industrial process - raw materials to final product storage,N/a (field not yet included in 2013 reporting),Operations,350.0,No,No
+12348-4-2014,Packaging,Scope 3,Upstream,1.64,No,No
+12348-4-2014,Other: Raw Materials (Agriculture and processing),"Scope 1, 2, & 3",Upstream,0.936,No,No
+12348-4-2014,Processing,Scope 1 & 2,Operations,1.134,No,No
+12348-4-2014,Distribution,Scope 3,Downstream,0.2436,Yes,No
+12348-4-2014,Consumer use,Scope 3,Downstream,0.014,No,No
+12348-4-2014,End of life/Final disposal,Scope 3,Downstream,-0.504,No,Yes
+12942-1-2013,Packaging: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Upstream,0.008,No,No
+12942-1-2013,Cultivation: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Upstream,0.008,No,No
+12942-1-2013,Processing: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Operations,0.006,No,No
+12942-1-2013,Treatment: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Operations,0.0025,No,No
+12942-1-2013,Overheads: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Operations,0.002,No,No
+12942-1-2013,"Use and End-of-Life : For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso)  Note: End-of-Life has been aggregated to Use since the system doesn't allow for negative figures for emissions resulting from recovery, incl. recycling, of used packaging.",N/a (field not yet included in 2013 reporting),Downstream,0.034,No,No
+12942-1-2013,"Boiler, coffee maker and cup manufacturing: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso)",N/a (field not yet included in 2013 reporting),Downstream,0.002,No,No
+12942-1-2013,Delivery: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Downstream,0.002,Yes,No
+12942-1-2013,Distribution: For more specific details please see Humbert et al. (2009) Life cycle assessment of spray dried soluble coffee and comparison with alternatives (drip filter and capsule espresso),N/a (field not yet included in 2013 reporting),Downstream,0.001,Yes,No
+12942-1-2016,Other: Agriculture,Scope 3,Upstream,0.02,No,No
+12942-1-2016,Packaging,Scope 3,Upstream,0.0056,No,No
+12942-1-2016,Manufacturing,Scope 1 & 2,Operations,0.0057,No,No
+12942-1-2016,Consumer use,Scope 3,Downstream,0.019,No,No
+12942-1-2016,Distribution,Scope 3,Downstream,0.0013,Yes,No
+12942-1-2016,End of life/Final disposal,Scope 3,Downstream,0.0,No,Yes
+12942-2-2013,2. Packaging / Equipment Production:  Extraction of raw materials and production of the drinking container and drinking glasses used. Transportation of all production materials for these components up to the point of manufacture are included in this phase.,N/a (field not yet included in 2013 reporting),Upstream,0.0662,No,No
+12942-2-2013,1. Beverage Production: Pumping and treatment of the drinking water either at a municipal water plant or at a bottled beverage production facility. Transportation of all water production materials up to the point of manufacture is included in this phase.,N/a (field not yet included in 2013 reporting),Operations,0.0071,No,No
+12942-2-2013,"4. Distribution and Marketplace:  Activities related to marketing the products, including operation of retail outlets and/or coolers.",N/a (field not yet included in 2013 reporting),Downstream,0.0584,Yes,No
+12942-2-2013,"6. Use and End-of-Life : as the system doesn't allow for negative figures, we have aggregated Use phase and End-of-life phase.   Use: Washing & Refrigeration Refrigeration of the water at the user’s home. Commercial coolers are included in the Distribution and Marketplace stage mentioned above.  End of Life:  Disposal of all materials by either landfilling, waste-to-energy or recycling. For disposal options that reflect a beneficial use of the material, these benefits are added to the system by expanding the system boundary to include the environmental burdens that are avoided by not needing to otherwise fulfill these functions. This includes the avoidance of electricity generation from waste-to-energy operations and avoidance of virgin material production from material recycling. At the end-of-life stage (and in all stages), emissions are included and equally evaluated regardless of the timing of their occurrence.  The Emissions (kg CO2e) per unit at the End of Life stage is -0.004.",N/a (field not yet included in 2013 reporting),Downstream,0.0072,No,No
+12942-2-2013,"3. Use - Transport:  All transportation occurring in the system beginning with the immediate suppliers to the manufacturers of beverage products and drinking containers, and ending with the transport of all materials to end-of-life. Also included are transportation of products from point of manufacture to point of sale.",N/a (field not yet included in 2013 reporting),Downstream,0.0054,Yes,No
+12942-2-2014,Other: Packaging / Equipment Production,Scope 3,Upstream,0.0662,No,No
+12942-2-2014,Other: Beverage Production,Scope 3,Operations,0.0071,No,No
+12942-2-2014,Other: Distribution and Marketplace,Scope 3,Downstream,0.0584,Yes,No
+12942-2-2014,Other: Use - Washing & Refrigeration,Scope 3,Downstream,0.0076,No,No
+12942-2-2014,Other: Transport,Scope 3,Downstream,0.0054,Yes,No
+12942-2-2014,Other: End of Life,Scope 3,Downstream,0.0,No,Yes
+12942-2-2015,Other: Packaging / Equipment Production,Scope 3,Upstream,0.0662,No,No
+12942-2-2015,Other: Beverage Production,"Scope 1, 2, & 3",Operations,0.0071,No,No
+12942-2-2015,Other: Distribution and Marketplace,Scope 3,Downstream,0.0584,Yes,No
+12942-2-2015,Other: Use - Washing & Refrigeration,Scope 3,Downstream,0.0076,No,No
+12942-2-2015,Transportation,Scope 3,Downstream,0.0054,Yes,No
+12942-2-2015,End of life/Final disposal,Scope 3,Downstream,0.0,No,Yes
+12942-2-2016,Other: Packaging / Equipment Production,Scope 3,Upstream,0.0662,No,No
+12942-2-2016,Other: Beverage Production,"Scope 1, 2, & 3",Operations,0.0071,No,No
+12942-2-2016,Other: Distribution and Marketplace,Scope 3,Downstream,0.0584,Yes,No
+12942-2-2016,Other: Use - Washing & Refrigeration,Scope 3,Downstream,0.0076,No,No
+12942-2-2016,Transportation,Scope 3,Downstream,0.0054,Yes,No
+12942-2-2016,End of life/Final disposal,Scope 3,Downstream,0.0,No,Yes
+12942-3-2013,1a.Packaging production for France.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Upstream,0.081,No,No
+12942-3-2013,1c.Product assembly and preservation process for France.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Operations,0.014,No,No
+12942-3-2013,1b.Distribution for France.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Downstream,0.076,Yes,No
+12942-3-2013,1d.End of life of packaging for France.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Downstream,0.013,No,Yes
+12942-4-2013,2a.Packaging production for Spain.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Upstream,0.081,No,No
+12942-4-2013,2c. Product assembly and preservation process for Spain.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Operations,0.019,No,No
+12942-4-2013,2b. Distribution for Spain.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Downstream,0.041,Yes,No
+12942-4-2013,2d.End of life of packaging for Spain.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Downstream,0.002,No,Yes
+12942-5-2013,3a. Packaging production for Germany.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Upstream,0.081,No,No
+12942-5-2013,3c. Product assembly and preservation process for Germany.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Operations,0.014,No,No
+12942-5-2013,3b.Distribution for Germany.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Downstream,0.028,Yes,No
+12942-5-2013,3d. End of life of packaging for Germany.  For more specific details please see Humbert et al. (2009) Life cycle assessment of two baby food packaging alternatives: glass jars vs. plastic pots.,N/a (field not yet included in 2013 reporting),Downstream,0.002,No,Yes
+22710-1-2014,"Other: storage, transportation, manufacturing, packaging",Scope 3,Upstream,0.141,No,No
+22710-1-2014,Production,Scope 2,Operations,0.0123,No,No
+22710-1-2014,Production,Scope 1,Operations,0.005,No,No
+22710-1-2014,Other: Losses of CO2 (product) during manufacturing,Scope 1,Operations,0.0013,No,No
+22710-1-2014,Transportation,Scope 1,Downstream,0.007,Yes,No
+22710-1-2014,Storage,Scope 1,Downstream,0.0007,No,No
+22710-1-2015,"Other: Manufacturing, Packaging",Scope 3,Upstream,0.0607,No,No
+22710-1-2015,Production,Scope 2,Operations,0.0131,No,No
+22710-1-2015,Production,Scope 1,Operations,0.0048,No,No
+22710-1-2015,Other: Losses of CO2 used for carbonation of the beverages during manufacturing.,Scope 1,Operations,0.0016,No,No
+22710-1-2015,"Other: Electricity purchased for remote properties (Distribution centres, offices etc)",Scope 2,Operations,0.0006,No,No
+22710-1-2015,"Other: Storage, transportation",Scope 3,Downstream,0.0715,Yes,No
+22710-1-2015,Transportation,Scope 1,Downstream,0.0048,Yes,No
+22710-1-2015,Storage,Scope 1,Downstream,0.0007,No,No
+22710-1-2015,"Other: Fuel used in remote properties (Distribution centres, offices etc)",Scope 1,Downstream,0.0004,No,No
+22710-1-2016,Other: Manufacturing & Packaging,Scope 3,Upstream,0.0622,No,No
+22710-1-2016,Production,Scope 2,Operations,0.0102,No,No
+22710-1-2016,Production,Scope 1,Operations,0.0039,No,No
+22710-1-2016,Other: Losses of CO2 used for carbonation of the beverages during manufacturing.,Scope 1,Operations,0.0016,No,No
+22710-1-2016,"Other: Electricity purchased for remote properties (Distribution centres, offices etc.)",Scope 2,Operations,0.0005,No,No
+22710-1-2016,Other: Transportation & Storage,Scope 3,Downstream,0.0641,Yes,No
+22710-1-2016,Transportation,Scope 1,Downstream,0.0041,Yes,No
+22710-1-2016,Storage,Scope 1,Downstream,0.0005,No,No
+22710-1-2016,"Other: Fuel used in remote properties (Distribution centres, offices etc.)",Scope 1,Downstream,0.0004,No,No
+33496-2-2014,Manufacturing,Scope 1 & 2,Operations,132.0,No,No
+33496-2-2014,Transportation,Scope 1,Downstream,32.0,Yes,No
+33496-2-2015,Manufacturing,Scope 1 & 2,Operations,131.0,No,No
+33496-2-2015,Transportation,Scope 1,Downstream,47.0,Yes,No
+3435-1-2016,Material acquisition,Scope 3,Upstream,8478.0,No,No
+3435-1-2016,Energy/Fuel,Scope 1,Operations,9093.0,No,No
+3435-1-2016,Production,Scope 2,Operations,6474.0,No,No
+3435-1-2016,Processing,Scope 1,Operations,686.0,No,No
+3435-1-2016,Transportation,Scope 3,Downstream,102.0,Yes,No
+3435-1-2016,Other:,Scope 3,Downstream,6.0,No,No
+3435-2-2016,Material acquisition,Scope 3,Upstream,4983.0,No,No
+3435-2-2016,Production,Scope 2,Operations,9028.0,No,No
+3435-2-2016,Energy/Fuel,Scope 1,Operations,6219.0,No,No
+3435-2-2016,Processing,Scope 1,Operations,793.0,No,No
+3435-2-2016,Transportation,Scope 3,Downstream,96.0,Yes,No
+3435-2-2016,Other:,Scope 3,Downstream,7.0,No,No
+3435-3-2016,Material acquisition,Scope 3,Upstream,3017.0,No,No
+3435-3-2016,Production,Scope 2,Operations,12694.0,No,No
+3435-3-2016,Energy/Fuel,Scope 1,Operations,1412.0,No,No
+3435-3-2016,Processing,Scope 1,Operations,883.0,No,No
+3435-3-2016,Transportation,Scope 3,Downstream,34.0,Yes,No
+3435-3-2016,Other:,Scope 3,Downstream,3.0,No,No
+3435-4-2016,Material acquisition,Scope 3,Upstream,8022.0,No,No
+3435-4-2016,Energy/Fuel,Scope 1,Operations,9943.0,No,No
+3435-4-2016,Production,Scope 2,Operations,8033.0,No,No
+3435-4-2016,Processing,Scope 1,Operations,767.0,No,No
+3435-4-2016,Transportation,Scope 3,Downstream,68.0,Yes,No
+3435-4-2016,Other:,Scope 3,Downstream,3.0,No,No
+3435-5-2016,Material acquisition,Scope 3,Upstream,877.0,No,No
+3435-5-2016,Energy/Fuel,Scope 1,Operations,1678.0,No,No
+3435-5-2016,Production,Scope 2,Operations,966.0,No,No
+3435-5-2016,Processing,Scope 1,Operations,292.0,No,No
+3435-5-2016,Transportation,Scope 3,Downstream,43.0,Yes,No
+3435-5-2016,Other:,Scope 3,Downstream,3.0,No,No
+34386-1-2016,Energy/Fuel,Scope 1,Operations,6.073,No,No
+34386-1-2016,Transportation,Scope 3,Downstream,10.811,Yes,No
+34386-1-2016,Other: Handling,Scope 3,Downstream,6.32e-05,No,No
+3565-10-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.2455,No,No
+3565-10-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0054,No,No
+3565-10-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0116,No,No
+3565-10-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0564,No,No
+3565-10-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0146,Yes,No
+3565-10-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0058,No,No
+3565-11-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1069,No,No
+3565-11-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0077,No,No
+3565-11-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0271,No,No
+3565-11-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0607,No,No
+3565-11-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0158,Yes,No
+3565-11-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0018,No,No
+3565-1-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.096,No,No
+3565-1-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0226,No,No
+3565-1-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0119,No,No
+3565-1-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0289,No,No
+3565-1-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0097,Yes,No
+3565-1-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0009,No,No
+3565-12-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1688,No,No
+3565-12-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.032,No,No
+3565-12-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0864,No,No
+3565-12-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0552,Yes,No
+3565-12-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0368,No,No
+3565-12-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0208,No,No
+3565-13-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.2324,No,No
+3565-13-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0213,No,No
+3565-13-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.015,No,No
+3565-13-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0588,No,No
+3565-13-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0168,Yes,No
+3565-13-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0056,No,No
+3565-14-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1068,No,No
+3565-14-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0295,No,No
+3565-14-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0274,No,No
+3565-14-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0588,No,No
+3565-14-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0156,Yes,No
+3565-14-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0017,No,No
+3565-3-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1034,No,No
+3565-3-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0336,No,No
+3565-3-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0264,No,No
+3565-3-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0588,No,No
+3565-3-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0158,Yes,No
+3565-3-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0016,No,No
+3565-4-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1645,No,No
+3565-4-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.14,No,No
+3565-4-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0855,No,No
+3565-4-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.055,Yes,No
+3565-4-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.035,No,No
+3565-4-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0195,No,No
+3565-5-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.0947,No,No
+3565-5-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0051,No,No
+3565-5-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0115,No,No
+3565-5-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0288,No,No
+3565-5-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0093,Yes,No
+3565-5-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0008,No,No
+3565-6-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.2434,No,No
+3565-6-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0058,No,No
+3565-6-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0119,No,No
+3565-6-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0578,No,No
+3565-6-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0149,Yes,No
+3565-6-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0058,No,No
+3565-7-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1067,No,No
+3565-7-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0081,No,No
+3565-7-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0268,No,No
+3565-7-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0605,No,No
+3565-7-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0158,Yes,No
+3565-7-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0015,No,No
+3565-8-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.168,No,No
+3565-8-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0034,No,No
+3565-8-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.086,No,No
+3565-8-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0548,Yes,No
+3565-8-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0364,No,No
+3565-8-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0208,No,No
+3565-9-2013,Packaging,N/a (field not yet included in 2013 reporting),Upstream,0.0729,No,No
+3565-9-2013,Ingredients,N/a (field not yet included in 2013 reporting),Upstream,0.0052,No,No
+3565-9-2013,Manufacturing,N/a (field not yet included in 2013 reporting),Operations,0.0185,No,No
+3565-9-2013,Refrigeration,N/a (field not yet included in 2013 reporting),Downstream,0.0414,No,No
+3565-9-2013,Distribution,N/a (field not yet included in 2013 reporting),Downstream,0.0108,Yes,No
+3565-9-2013,Consumer Use,N/a (field not yet included in 2013 reporting),Downstream,0.0012,No,No
+38359-10-2016,Other: Raw materials production,"Scope 1, 2, & 3",Upstream,0.315,No,No
+38359-10-2016,Packaging,"Scope 1, 2, & 3",Upstream,0.148,No,No
+38359-10-2016,Production,"Scope 1, 2, & 3",Operations,0.078,No,No
+38359-10-2016,Transportation,"Scope 1, 2, & 3",Downstream,0.007,Yes,No
+38359-1-2014,Other: Raw material production,"Scope 1, 2, & 3",Upstream,0.615,No,No
+38359-1-2014,Packaging,"Scope 1, 2, & 3",Upstream,0.084,No,No
+38359-1-2014,Production,"Scope 1, 2, & 3",Operations,0.285,No,No
+38359-1-2014,Other: Milling,"Scope 1, 2, & 3",Operations,0.195,No,No
+38359-1-2014,Transportation,"Scope 1, 2, & 3",Downstream,0.1,Yes,No
+38359-1-2015,Other: Raw material production,"Scope 1, 2, & 3",Upstream,0.624,No,No
+38359-1-2015,Packaging,"Scope 1, 2, & 3",Upstream,0.126,No,No
+38359-1-2015,Production,"Scope 1, 2, & 3",Operations,0.27,No,No
+38359-1-2015,Other: Milling,"Scope 1, 2, & 3",Operations,0.198,No,No
+38359-1-2015,Transportation,"Scope 1, 2, & 3",Downstream,0.1,Yes,No
+38359-2-2014,Other: raw material production,"Scope 1, 2, & 3",Upstream,0.557,No,No
+38359-2-2014,Packaging,"Scope 1, 2, & 3",Upstream,0.1,No,No
+38359-2-2014,Production,"Scope 1, 2, & 3",Operations,0.199,No,No
+38359-2-2014,Other: milling,"Scope 1, 2, & 3",Operations,0.051,No,No
+38359-2-2014,Transportation,"Scope 1, 2, & 3",Downstream,0.04,Yes,No
+38359-2-2015,Other: Raw material production,"Scope 1, 2, & 3",Upstream,0.463,No,No
+38359-2-2015,Packaging,"Scope 1, 2, & 3",Upstream,0.105,No,No
+38359-2-2015,Production,"Scope 1, 2, & 3",Operations,0.194,No,No
+38359-2-2015,Other: milling,"Scope 1, 2, & 3",Operations,0.048,No,No
+38359-2-2015,Transportation,"Scope 1, 2, & 3",Downstream,0.037,Yes,No
+38359-3-2014,Other: raw material production,"Scope 1, 2, & 3",Upstream,0.557,No,No
+38359-3-2014,Packaging,"Scope 1, 2, & 3",Upstream,0.1,No,No
+38359-3-2014,Production,"Scope 1, 2, & 3",Operations,0.199,No,No
+38359-3-2014,Other: milling,"Scope 1, 2, & 3",Operations,0.051,No,No
+38359-3-2014,Transportation,"Scope 1, 2, & 3",Downstream,0.12,Yes,No
+38359-3-2015,Other: Raw material production,"Scope 1, 2, & 3",Upstream,0.463,No,No
+38359-3-2015,Packaging,"Scope 1, 2, & 3",Upstream,0.105,No,No
+38359-3-2015,Production,"Scope 1, 2, & 3",Operations,0.194,No,No
+38359-3-2015,Other: milling,"Scope 1, 2, & 3",Operations,0.048,No,No
+38359-3-2015,Transportation,"Scope 1, 2, & 3",Downstream,0.071,Yes,No
+38359-4-2014,Other: raw material production,"Scope 1, 2, & 3",Upstream,0.916,No,No
+38359-4-2014,Packaging,"Scope 1, 2, & 3",Upstream,0.1,No,No
+38359-4-2014,Production,"Scope 1, 2, & 3",Operations,0.324,No,No
+38359-4-2014,Other: milling,"Scope 1, 2, & 3",Operations,0.096,No,No
+38359-4-2014,Transportation,"Scope 1, 2, & 3",Downstream,0.234,Yes,No
+38359-4-2015,Other: Raw material production,"Scope 1, 2, & 3",Upstream,0.908,No,No
+38359-4-2015,Packaging,"Scope 1, 2, & 3",Upstream,0.105,No,No
+38359-4-2015,Production,"Scope 1, 2, & 3",Operations,0.351,No,No
+38359-4-2015,Other: Milling,"Scope 1, 2, & 3",Operations,0.102,No,No
+38359-4-2015,Transportation,"Scope 1, 2, & 3",Downstream,0.234,Yes,No
+38359-5-2014,Other: raw material production,"Scope 1, 2, & 3",Upstream,0.53,No,No
+38359-5-2014,Packaging,"Scope 1, 2, & 3",Upstream,0.1,No,No
+38359-5-2014,Production,"Scope 1, 2, & 3",Operations,0.181,No,No
+38359-5-2014,Other: milling,"Scope 1, 2, & 3",Operations,0.037,No,No
+38359-5-2014,Transportation,"Scope 1, 2, & 3",Downstream,0.078,Yes,No
+38359-5-2015,Other: Raw material production,"Scope 1, 2, & 3",Upstream,0.596,No,No
+38359-5-2015,Packaging,"Scope 1, 2, & 3",Upstream,0.105,No,No
+38359-5-2015,Production,"Scope 1, 2, & 3",Operations,0.137,No,No
+38359-5-2015,Other: milling process,"Scope 1, 2, & 3",Operations,0.019,No,No
+38359-5-2015,Transportation,"Scope 1, 2, & 3",Downstream,0.078,Yes,No
+38359-8-2015,Other: raw material production,"Scope 1, 2, & 3",Upstream,0.709,No,No
+38359-8-2015,Packaging,"Scope 1, 2, & 3",Upstream,0.102,No,No
+38359-8-2015,Production,"Scope 1, 2, & 3",Operations,0.199,No,No
+38359-8-2015,Transportation,BLANK,Downstream,0.226,Yes,No
+38459-1-2013,fishing - longline albacore,N/a (field not yet included in 2013 reporting),Upstream,0.45,No,No
+38459-1-2013,packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1,No,No
+38459-1-2013,processing - loining and canning,N/a (field not yet included in 2013 reporting),Operations,0.1,No,No
+38459-1-2013,transportaiton (shipping and trucking),N/a (field not yet included in 2013 reporting),Downstream,0.03,Yes,No
+38459-2-2013,fishing - purse seine,N/a (field not yet included in 2013 reporting),Upstream,0.23,No,No
+38459-2-2013,packaging,N/a (field not yet included in 2013 reporting),Upstream,0.1,No,No
+38459-2-2013,processing - loining and canning,N/a (field not yet included in 2013 reporting),Operations,0.02,No,No
+38459-2-2013,transportation (shipping and trucking),N/a (field not yet included in 2013 reporting),Downstream,0.04,Yes,No
+394-1-2015,Material acquisition,"Scope 1, 2, & 3",Upstream,42.0,No,No
+394-1-2015,Manufacturing,"Scope 1, 2, & 3",Operations,80.0,No,No
+394-1-2015,Distribution,"Scope 1, 2, & 3",Downstream,3.7,Yes,No
+394-1-2017,Material acquisition,Scope 3,Upstream,42.0,No,No
+394-1-2017,Production,Scope 1 & 2,Operations,80.0,No,No
+394-1-2017,Transportation,Scope 3,Downstream,3.7,Yes,No
+394-12-2017,Material acquisition,Scope 3,Upstream,120.0,No,No
+394-12-2017,Production,Scope 1 & 2,Operations,179.0,No,No
+394-12-2017,Transportation,Scope 3,Downstream,1.64,Yes,No
+394-14-2017,Material acquisition,Scope 3,Upstream,118.0,No,No
+394-14-2017,Production,Scope 1 & 2,Operations,193.0,No,No
+394-14-2017,Transportation,Scope 3,Downstream,8.33,Yes,No
+394-15-2017,Material acquisition,Scope 3,Upstream,121.0,No,No
+394-15-2017,Production,Scope 1 & 2,Operations,306.0,No,No
+394-15-2017,Transportation,Scope 3,Downstream,6.47,Yes,No
+394-16-2017,Material acquisition,Scope 3,Upstream,108.0,No,No
+394-16-2017,Production,Scope 1 & 2,Operations,471.0,No,No
+394-16-2017,Transportation,Scope 3,Downstream,6.47,Yes,No
+394-17-2017,Material acquisition,Scope 3,Upstream,79.3,No,No
+394-17-2017,Production,Scope 1 & 2,Operations,307.0,No,No
+394-17-2017,Transportation,Scope 3,Downstream,6.47,Yes,No
+394-20-2017,Material acquisition,Scope 3,Upstream,25.2,No,No
+394-20-2017,Production,Scope 1 & 2,Operations,30.7,No,No
+394-20-2017,Transportation,Scope 3,Downstream,1.5,Yes,No
+394-9-2017,Material acquisition,Scope 3,Upstream,66.4,No,No
+394-9-2017,Production,Scope 1 & 2,Operations,87.8,No,No
+394-9-2017,Transportation,Scope 3,Downstream,0.9,Yes,No
+4311-1-2013,Milk (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.773,No,No
+4311-1-2013,Packaging (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.166,No,No
+4311-1-2013,Other raw materials (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.059,No,No
+4311-1-2013,Production (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Operations,0.173,No,No
+4311-1-2013,Retail / home use (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.171,No,No
+4311-1-2013,Logistics (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.153,Yes,No
+4311-1-2013,Packaging and product end of life (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.036,No,Yes
+4311-2-2013,Milk (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.628,No,No
+4311-2-2013,Packaging (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.164,No,No
+4311-2-2013,Other raw materials (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.031,No,No
+4311-2-2013,Production (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Operations,0.118,No,No
+4311-2-2013,Logistics (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.156,Yes,No
+4311-2-2013,Packaging and product end of life (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.113,No,Yes
+4311-2-2013,Retail / home use (in kg CO2e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.087,No,No
+4311-3-2013,Packaging (in kg CO2-e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.062,No,No
+4311-3-2013,Ingredients (in kg CO2-e / kg product),N/a (field not yet included in 2013 reporting),Upstream,0.0,No,No
+4311-3-2013,Production (in kg CO2-e / kg product),N/a (field not yet included in 2013 reporting),Operations,0.03,No,No
+4311-3-2013,Logistics (in kg CO2-e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.051,Yes,No
+4311-3-2013,Retail / home use (in kg CO2-e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.031,No,No
+4311-3-2013,End of life (in kg CO2-e / kg product),N/a (field not yet included in 2013 reporting),Downstream,0.0,No,Yes
+4311-4-2015,Cradle to gate,Scope 3,Upstream,0.0524,No,No
+4311-4-2015,Production,Scope 2,Operations,0.0264,No,No
+4311-4-2015,Production,Scope 1,Operations,0.0022,No,No
+4311-4-2015,Other: Retail and Home storage,Scope 3,Downstream,0.0306,No,No
+4311-4-2015,Distribution,Scope 3,Downstream,0.0218,Yes,No
+4311-4-2015,End of life/Final disposal,Scope 3,Downstream,0.0112,No,Yes
+4311-5-2015,Cradle to gate,Scope 3,Upstream,1.7838,No,No
+4311-5-2015,Production,Scope 2,Operations,0.0736,No,No
+4311-5-2015,Production,Scope 1,Operations,0.0512,No,No
+4311-5-2015,Distribution,Scope 3,Downstream,0.3093,Yes,No
+4311-5-2015,End of life/Final disposal,Scope 3,Downstream,0.0544,No,Yes
+4311-5-2015,Other: Retail and Home storage,Scope 3,Downstream,0.007,No,No
+4311-6-2015,Cradle to gate,Scope 3,Upstream,0.9926,No,No
+4311-6-2015,Production,Scope 1,Operations,0.0509,No,No
+4311-6-2015,Production,Scope 2,Operations,0.0109,No,No
+4311-6-2015,End of life/Final disposal,Scope 3,Downstream,0.0792,No,Yes
+4311-6-2015,Distribution,Scope 3,Downstream,0.0642,Yes,No
+4311-6-2015,Other: Retail and home storage,Scope 3,Downstream,0.0621,No,No
+4311-7-2015,Cradle to gate,Scope 3,Upstream,1.6846,No,No
+4311-7-2015,Production,Scope 2,Operations,0.1101,No,No
+4311-7-2015,Production,Scope 1,Operations,0.0546,No,No
+4311-7-2015,Distribution,Scope 3,Downstream,0.1631,Yes,No
+4311-7-2015,Other: Retail and home storage,Scope 3,Downstream,0.1291,No,No
+4311-7-2015,End of life/Final disposal,Scope 3,Downstream,0.1113,No,Yes
+46702-1-2014,Material acquisition,Scope 1 & 2,Upstream,301.0,No,No
+46702-1-2014,Cradle to gate,"Scope 1, 2, & 3",Operations,302.0,No,No
+46702-2-2016,BLANK,Scope 2,Operations,275.0,No,No
+46702-2-2016,Manufacturing,Scope 1,Operations,240.0,No,No
+46702-2-2016,Distribution,Scope 3,Downstream,86.0,Yes,No
+50932-1-2015,Cradle to gate,Scope 3,Upstream,0.4,No,No
+50932-1-2015,Processing,Scope 1 & 2,Operations,0.3,No,No

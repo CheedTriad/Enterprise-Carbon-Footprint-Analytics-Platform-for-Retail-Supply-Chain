@@ -529,6 +529,7 @@ app = dash.Dash(
     suppress_callback_exceptions=True,
 )
 app.title = "GreenMart | Carbon Analytics"
+server = app.server  # expose Flask server for gunicorn
 
 app.layout = dbc.Container([
     dcc.Location(id="url"),
