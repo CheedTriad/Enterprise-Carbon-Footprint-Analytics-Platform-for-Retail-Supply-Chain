@@ -1,6 +1,6 @@
 """
 app.py  --  GreenMart Carbon Footprint Analytics Platform
-Run:  python app.py
+Run:  py app.py
 Opens at: http://localhost:8050
 """
 
@@ -398,6 +398,65 @@ def table_styles(header_colour=TEXT_DARK):
         style_data_conditional=[{"if": {"row_index": "odd"}, "backgroundColor": "#FAFAF8"}],
     )
 
+# ── Mobile sidebar (offcanvas) ────────────────────────────────────────────────
+def make_mobile_offcanvas():
+    return dbc.Offcanvas(
+        html.Div([
+            html.Div([
+                html.Span("🌿", style={"fontSize": "1.3rem"}),
+                html.Span(" GreenMart", style={"fontSize": "1.05rem", "fontWeight": "800", "color": TEXT_LIGHT, "marginLeft": "6px"}),
+            ], style={"display": "flex", "alignItems": "center", "marginBottom": "4px"}),
+            html.P("Carbon Analytics Platform", style={"color": "#8FA8BF", "fontSize": "0.73rem", "marginBottom": "20px"}),
+
+            html.Label("Company Filter", style={"color": "#8FA8BF", "fontSize": "0.68rem", "textTransform": "uppercase", "letterSpacing": "0.07em", "marginBottom": "6px", "display": "block"}),
+            dcc.Dropdown(
+                id="company-filter-mobile",
+                options=(
+                    [{"label": "➕  Add your company...", "value": "__new__"}] +
+                    [{"label": c, "value": c} for c in ALL_COMPANIES]
+                ),
+                value="All Companies",
+                clearable=False,
+                style={"marginBottom": "8px", "fontSize": "12px"},
+            ),
+
+            html.Hr(style={"borderColor": "#3D5166", "marginBottom": "14px"}),
+            html.P("Navigation", style={"color": "#8FA8BF", "fontSize": "0.68rem", "textTransform": "uppercase", "letterSpacing": "0.07em", "marginBottom": "8px"}),
+            dbc.Nav([
+                dbc.NavLink("📊  Overview",          href="/",             active="exact"),
+                dbc.NavLink("🔬  Stage Breakdown",   href="/stages",       active="exact"),
+                dbc.NavLink("🎯  Hotspot Detection", href="/hotspots",     active="exact"),
+                dbc.NavLink("🏢  Benchmarking",      href="/benchmarking", active="exact"),
+                dbc.NavLink("💡  Interventions",     href="/interventions",active="exact"),
+            ], vertical=True, pills=True),
+
+            html.Hr(style={"borderColor": "#3D5166", "marginTop": "14px", "marginBottom": "10px"}),
+            html.P("Reference", style={"color": "#8FA8BF", "fontSize": "0.68rem", "textTransform": "uppercase", "letterSpacing": "0.07em", "marginBottom": "8px"}),
+            html.Button(
+                "📖  Glossary",
+                id="open-glossary-btn-mobile",
+                n_clicks=0,
+                style={
+                    "background": "none", "border": "none", "color": TEXT_LIGHT,
+                    "borderRadius": "0.25rem", "padding": "0.5rem 1rem",
+                    "fontSize": "0.875rem", "cursor": "pointer",
+                    "width": "100%", "textAlign": "left", "display": "block", "opacity": "0.85",
+                },
+            ),
+
+            html.Hr(style={"borderColor": "#3D5166", "marginTop": "14px", "marginBottom": "10px"}),
+            html.P("Data: Carbon Catalogue", style={"color": "#546E7A", "fontSize": "0.67rem", "marginBottom": "2px"}),
+            html.P("Kaack et al., 2022 · CC BY 4.0", style={"color": "#546E7A", "fontSize": "0.67rem", "marginBottom": "2px"}),
+            html.P("F&B Sector · 139 products · 351 stages", style={"color": "#546E7A", "fontSize": "0.67rem"}),
+        ], style={"padding": "22px 18px"}),
+        id="mobile-sidebar-offcanvas",
+        is_open=False,
+        placement="start",
+        style={"width": "285px", "backgroundColor": SIDEBAR_BG},
+        title=None,
+        backdrop=True,
+    )
+
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 SIDEBAR = dbc.Col([
     html.Div([
@@ -458,7 +517,7 @@ SIDEBAR = dbc.Col([
             html.P("F&B Sector · 139 products · 351 stages", style={"color": "#546E7A", "fontSize": "0.67rem"}),
         ], style={"position": "absolute", "bottom": "20px", "left": "20px", "right": "20px"}),
     ], style={"padding": "22px 18px", "height": "100vh", "backgroundColor": SIDEBAR_BG, "position": "relative"})
-], width=2, style={"padding": "0"})
+], width=2, className="d-none d-md-block", style={"padding": "0"})
 
 # ── App ───────────────────────────────────────────────────────────────────────
 app = dash.Dash(
@@ -477,11 +536,30 @@ app.layout = dbc.Container([
     dcc.Store(id="editing-company-store", data=None),
     make_glossary_offcanvas(),
     make_new_company_modal(),
+    make_mobile_offcanvas(),
+    # Mobile-only sticky top bar
+    dbc.Row([
+        dbc.Col([
+            html.Div([
+                dbc.Button(
+                    "☰",
+                    id="mobile-menu-btn",
+                    color="link",
+                    n_clicks=0,
+                    style={"color": TEXT_LIGHT, "fontSize": "1.4rem", "padding": "0 8px", "lineHeight": "1"},
+                ),
+                html.Div([
+                    html.Span("🌿", style={"fontSize": "1.1rem"}),
+                    html.Span(" GreenMart", style={"fontSize": "1rem", "fontWeight": "800", "color": TEXT_LIGHT, "marginLeft": "4px"}),
+                ], style={"display": "flex", "alignItems": "center"}),
+            ], style={"display": "flex", "alignItems": "center", "gap": "8px"}),
+        ], width=12),
+    ], className="d-flex d-md-none mobile-topbar", style={"margin": "0"}),
     dbc.Row([
         SIDEBAR,
         dbc.Col([
             html.Div(id="page-content", style={"padding": "28px 32px"})
-        ], width=10, style={"backgroundColor": PAGE_BG, "minHeight": "100vh"}),
+        ], xs=12, md=10, style={"backgroundColor": PAGE_BG, "minHeight": "100vh"}),
     ])
 ], fluid=True, style={"padding": "0", "fontFamily": "Inter, Helvetica Neue, sans-serif"})
 
@@ -518,16 +596,16 @@ def page_overview(company):
     return html.Div([
         section_header("Emissions Overview", "Portfolio-level summary across selected company filter"),
         dbc.Row([
-            dbc.Col(kpi_card("Total PCF",             f"{total_pcf:,.0f} kg CO2e",       f"{n_products} products",                         tooltip_key="pcf"),              width=2),
-            dbc.Col(kpi_card("Avg Carbon Intensity",  f"{avg_intensity:.2f} kg/kg",       "per kg of product",                              tooltip_key="carbon_intensity"), width=2),
-            dbc.Col(kpi_card("Hotspot Products",      str(n_hotspots),                    "flagged by K-Means",      accent=HOTSPOT,         tooltip_key="hotspot"),          width=2),
-            dbc.Col(kpi_card("Portfolio Coverage",    f"{n_products}/139",                "F&B sector products"),                                                             width=2),
-            dbc.Col(kpi_card("Hotspot Intensity",     f"{hotspot_intensity:.2f} kg/kg",   "hotspot cluster mean",    accent=HOTSPOT,         tooltip_key="carbon_intensity"), width=2),
-            dbc.Col(kpi_card("Non-Hotspot Intensity", f"{nonhotspot_intensity:.2f} kg/kg","non-hotspot cluster mean",accent=SUCCESS,         tooltip_key="carbon_intensity"), width=2),
+            dbc.Col(kpi_card("Total PCF",             f"{total_pcf:,.0f} kg CO2e",       f"{n_products} products",                         tooltip_key="pcf"),              xs=6, md=2),
+            dbc.Col(kpi_card("Avg Carbon Intensity",  f"{avg_intensity:.2f} kg/kg",       "per kg of product",                              tooltip_key="carbon_intensity"), xs=6, md=2),
+            dbc.Col(kpi_card("Hotspot Products",      str(n_hotspots),                    "flagged by K-Means",      accent=HOTSPOT,         tooltip_key="hotspot"),          xs=6, md=2),
+            dbc.Col(kpi_card("Portfolio Coverage",    f"{n_products}/139",                "F&B sector products"),                                                             xs=6, md=2),
+            dbc.Col(kpi_card("Hotspot Intensity",     f"{hotspot_intensity:.2f} kg/kg",   "hotspot cluster mean",    accent=HOTSPOT,         tooltip_key="carbon_intensity"), xs=6, md=2),
+            dbc.Col(kpi_card("Non-Hotspot Intensity", f"{nonhotspot_intensity:.2f} kg/kg","non-hotspot cluster mean",accent=SUCCESS,         tooltip_key="carbon_intensity"), xs=6, md=2),
         ], className="mb-4 g-3"),
         dbc.Row([
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_top,  config={"displayModeBar": False})), width=8),
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_dist, config={"displayModeBar": False})), width=4),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_top,  config={"displayModeBar": False})), xs=12, md=8),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_dist, config={"displayModeBar": False})), xs=12, md=4),
         ], className="g-3"),
     ])
 
@@ -599,8 +677,8 @@ def page_stages(company):
             " — across the product portfolio",
         ]),
         dbc.Row([
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_avg,   config={"displayModeBar": False})), width=5),
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_stack, config={"displayModeBar": False})), width=7),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_avg,   config={"displayModeBar": False})), xs=12, md=5),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_stack, config={"displayModeBar": False})), xs=12, md=7),
         ], className="mb-3 g-3"),
         card_wrap(html.Div([
             html.Div(html.H6("Stage-Level Records", style={"color": TEXT_DARK, "margin": "0", "fontWeight": "600"}),
@@ -673,14 +751,14 @@ def page_hotspots(company):
             " cluster.",
         ]),
         dbc.Row([
-            dbc.Col(kpi_card("Hotspot Products",       str(n_hotspots),                    "flagged products",          accent=HOTSPOT, tooltip_key="hotspot"),          width=3),
-            dbc.Col(kpi_card("Clusters",               "4",                                "K-Means k parameter",                       tooltip_key="kmeans"),           width=3),
-            dbc.Col(kpi_card("Hotspot Mean Intensity",  f"{hotspot_intensity:.2f} kg/kg",  "hotspot cluster",           accent=HOTSPOT, tooltip_key="carbon_intensity"), width=3),
-            dbc.Col(kpi_card("Normal Mean Intensity",   f"{nonhotspot_intensity:.2f} kg/kg","non-hotspot clusters",     accent=SUCCESS, tooltip_key="carbon_intensity"), width=3),
+            dbc.Col(kpi_card("Hotspot Products",       str(n_hotspots),                    "flagged products",          accent=HOTSPOT, tooltip_key="hotspot"),          xs=6, md=3),
+            dbc.Col(kpi_card("Clusters",               "4",                                "K-Means k parameter",                       tooltip_key="kmeans"),           xs=6, md=3),
+            dbc.Col(kpi_card("Hotspot Mean Intensity",  f"{hotspot_intensity:.2f} kg/kg",  "hotspot cluster",           accent=HOTSPOT, tooltip_key="carbon_intensity"), xs=6, md=3),
+            dbc.Col(kpi_card("Normal Mean Intensity",   f"{nonhotspot_intensity:.2f} kg/kg","non-hotspot clusters",     accent=SUCCESS, tooltip_key="carbon_intensity"), xs=6, md=3),
         ], className="mb-4 g-3"),
         dbc.Row([
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_scatter, config={"displayModeBar": False})), width=8),
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_pie,     config={"displayModeBar": False})), width=4),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_scatter, config={"displayModeBar": False})), xs=12, md=8),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_pie,     config={"displayModeBar": False})), xs=12, md=4),
         ], className="mb-3 g-3"),
         card_wrap(html.Div([
             html.Div(html.H6("Flagged Hotspot Products", style={"color": HOTSPOT, "margin": "0", "fontWeight": "600"}),
@@ -801,8 +879,8 @@ def page_benchmarking(custom_data=None):
             " and stage profile comparison across the F&B dataset",
         ]),
         dbc.Row([
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_bench, config={"displayModeBar": False})), width=7),
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_radar, config={"displayModeBar": False})), width=5),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_bench, config={"displayModeBar": False})), xs=12, md=7),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_radar, config={"displayModeBar": False})), xs=12, md=5),
         ], className="mb-3 g-3"),
         card_wrap(html.Div([
             html.Div(html.H6("Company Summary Statistics", style={"color": TEXT_DARK, "margin": "0", "fontWeight": "600"}),
@@ -879,8 +957,8 @@ def page_interventions():
             " calculated at £50 / tonne CO₂e. GreenMart scenario (synthetic data).",
         ]),
         dbc.Row([
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_roi,    config={"displayModeBar": False})), width=6),
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_bubble, config={"displayModeBar": False})), width=6),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_roi,    config={"displayModeBar": False})), xs=12, md=6),
+            dbc.Col(card_wrap(dcc.Graph(figure=fig_bubble, config={"displayModeBar": False})), xs=12, md=6),
         ], className="mb-3 g-3"),
         card_wrap(html.Div([
             html.Div(html.H6("Ranked Intervention Table  --  bold green = ROI above 0.85", style={"color": TEXT_DARK, "margin": "0", "fontWeight": "600"}),
@@ -898,6 +976,36 @@ def page_interventions():
 )
 def open_glossary(_):
     return True
+
+
+@callback(
+    Output("glossary-offcanvas", "is_open", allow_duplicate=True),
+    Input("open-glossary-btn-mobile", "n_clicks"),
+    prevent_initial_call=True,
+)
+def open_glossary_mobile(_):
+    return True
+
+
+# ── Mobile sidebar toggle ─────────────────────────────────────────────────────
+@callback(
+    Output("mobile-sidebar-offcanvas", "is_open"),
+    Input("mobile-menu-btn", "n_clicks"),
+    State("mobile-sidebar-offcanvas", "is_open"),
+    prevent_initial_call=True,
+)
+def toggle_mobile_sidebar(_, is_open):
+    return not is_open
+
+
+# ── Sync mobile company filter → desktop (drives all existing callbacks) ──────
+@callback(
+    Output("company-filter", "value", allow_duplicate=True),
+    Input("company-filter-mobile", "value"),
+    prevent_initial_call=True,
+)
+def sync_company_from_mobile(val):
+    return val or "All Companies"
 
 
 # ── Router ────────────────────────────────────────────────────────────────────

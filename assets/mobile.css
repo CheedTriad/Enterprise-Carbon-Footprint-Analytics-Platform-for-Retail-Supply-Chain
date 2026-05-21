@@ -1,0 +1,53 @@
+/* ── Mobile responsive overrides ──────────────────────────────────────── */
+
+/* Smaller content padding on phones */
+@media (max-width: 767.98px) {
+    #page-content {
+        padding: 16px 12px !important;
+    }
+
+    /* KPI card value — slightly smaller so two cards fit side by side */
+    .kpi-value {
+        font-size: 1.15rem !important;
+    }
+
+    /* Make chart containers scroll horizontally if they overflow */
+    .js-plotly-plot {
+        overflow-x: auto;
+    }
+
+    /* Shrink section header bottom margin */
+    .section-header {
+        margin-bottom: 12px !important;
+    }
+}
+
+/* ── Mobile top navigation bar ─────────────────────────────────────────── */
+.mobile-topbar {
+    background-color: #2C3E50;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+/* ── Smooth nav link active state in offcanvas ────────────────────────── */
+.nav-pills .nav-link.active {
+    background-color: #3B6EA5 !important;
+}
+
+.nav-pills .nav-link {
+    color: #ECEFF1;
+    font-size: 0.88rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    transition: background-color 0.15s ease;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.08);
+}
