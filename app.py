@@ -593,6 +593,7 @@ def page_overview(company):
         title="Distribution of Product Carbon Footprints",
     )
     chart_layout(fig_dist, height=290)
+    fig_dist.update_layout(yaxis_type="log")
 
     return html.Div([
         section_header("Emissions Overview", "Portfolio-level summary across selected company filter"),
@@ -606,7 +607,34 @@ def page_overview(company):
         ], className="mb-4 g-3"),
         dbc.Row([
             dbc.Col(card_wrap(dcc.Graph(figure=fig_top,  config={"displayModeBar": False})), xs=12, md=8),
-            dbc.Col(card_wrap(dcc.Graph(figure=fig_dist, config={"displayModeBar": False})), xs=12, md=4),
+            dbc.Col(
+                card_wrap(html.Div([
+                    html.Div([
+                        html.Span("Scale:", style={
+                            "fontSize": "0.74rem", "color": TEXT_MID,
+                            "fontWeight": "600", "marginRight": "8px",
+                        }),
+                        dcc.RadioItems(
+                            id="dist-scale-toggle",
+                            options=[
+                                {"label": "Log",    "value": "log"},
+                                {"label": "Linear", "value": "linear"},
+                            ],
+                            value="log",
+                            inline=True,
+                            inputStyle={"marginRight": "3px"},
+                            labelStyle={"marginRight": "12px", "fontSize": "0.74rem", "color": TEXT_MID},
+                        ),
+                    ], style={
+                        "padding": "8px 12px 6px",
+                        "display": "flex",
+                        "alignItems": "center",
+                        "borderBottom": f"1px solid {BORDER}",
+                    }),
+                    dcc.Graph(id="overview-dist-graph", figure=fig_dist, config={"displayModeBar": False}),
+                ])),
+                xs=12, md=4,
+            ),
         ], className="g-3"),
     ])
 
@@ -1226,6 +1254,26 @@ def populate_edit_form(editing_company, all_data):
         round(record["transport_frac"] * 100, 1),
         round(record["endoflife_frac"] * 100, 1),
     )
+
+
+# ── Distribution chart log/linear scale toggle ────────────────────────────────
+@callback(
+    Output("overview-dist-graph", "figure"),
+    Input("dist-scale-toggle", "value"),
+    State("company-filter", "value"),
+    prevent_initial_call=True,
+)
+def update_dist_scale(scale, company):
+    df = filter_products(company)
+    fig = px.histogram(
+        df, x="pcf_kg_co2e", nbins=25,
+        color_discrete_sequence=[ACCENT],
+        labels={"pcf_kg_co2e": "PCF (kg CO2e)"},
+        title="Distribution of Product Carbon Footprints",
+    )
+    chart_layout(fig, height=290)
+    fig.update_layout(yaxis_type=scale)
+    return fig
 
 
 if __name__ == "__main__":
