@@ -84,8 +84,7 @@ Then open your browser and go to `http://127.0.0.1:8050`.
 
 ## References
 
-Kaack, L.H., Apt, J., Morgan, M.G. and Whitacre, J.F. (2022). The Carbon Catalogue: Carbon footprints of 866 commercial products from 8 industry sectors and 5 continents. *Scientific Data*, 9(1), p.87. DOI: [10.1038/s41597-022-01178-9](https://doi.org/10.1038/s41597-022-01178-9)
-
+...
 ---
 
 ## Author
